@@ -1,8 +1,6 @@
 from pathlib import Path
 from dataclasses import dataclass
 
-import numpy as np
-import numpy.typing as npt
 from simple_parsing import ArgumentParser
 from parsita import ParserContext, lit, reg, rep1, until, eof
 
