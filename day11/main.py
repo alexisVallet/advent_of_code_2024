@@ -22,15 +22,6 @@ def blink_stone(n: int) -> list[int]:
         return [n * 2024]
 
 
-def blink_stones(ns: list[int], num_blinks: int) -> list[int]:
-    cur_ns = ns
-
-    for _ in range(num_blinks):
-        cur_ns = list(chain(*[blink_stone(n) for n in cur_ns]))
-
-    return cur_ns
-
-
 @cache
 def blink_stone_count_recursive(n: int, num_blinks: int) -> int:
     if num_blinks == 0:
