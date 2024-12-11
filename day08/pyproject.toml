@@ -1,0 +1,7 @@
+[project]
+name = "aoc-day08"
+version = "0.0.1"
+dependencies = [
+    "simple-parsing == 0.1.6",
+    "black == 24.10.0",
+]
