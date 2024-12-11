@@ -1,6 +1,5 @@
 from pathlib import Path
 from dataclasses import dataclass
-from itertools import chain
 from functools import cache
 
 from simple_parsing import ArgumentParser
