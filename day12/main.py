@@ -124,8 +124,6 @@ def main() -> None:
 
         perimeter = sum(num_fences(node) for node in plot)
         num_sides = sum(num_sides_added(node) for node in plot)
-        i, j = next(iter(plot))
-        plot_type = plot_maps[i][j]
         total_price_q1 += area * perimeter
         total_price_q2 += area * num_sides
 
