@@ -101,7 +101,6 @@ def _solve_q2(
 def solve_q2(machine: ClawMachine, upper_bound: int | None = None) -> int | None:
     # First check that A and B are on either side of T. If it's not the
     # case it's not solvable and we can return early.
-    # for all intents and purposes T is at a 45 degree angle.
     angle_T = np.arccos(machine.T[0] / norm(machine.T))
     angle_A = np.arccos(machine.A[0] / norm(machine.A))
     angle_B = np.arccos(machine.B[0] / norm(machine.B))
