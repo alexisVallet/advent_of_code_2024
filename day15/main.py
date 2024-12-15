@@ -199,7 +199,6 @@ def simulate_q2(puzzle: Puzzle, interactive: bool, step: bool) -> Puzzle:
         dir_it = puzzle.movement
 
     for dir in dir_it:
-        # prev_state = deepcopy(tiles_map)
         dir *= np.array([1, 0.5], dtype=np.float64)
         try:
             to_move = move_robot_or_box(cur_pos, dir)
@@ -215,7 +214,6 @@ def simulate_q2(puzzle: Puzzle, interactive: bool, step: bool) -> Puzzle:
         except CantMove:
             pass
         except KeyError as e:
-            # show_puzzle_q2(Puzzle(prev_state, cur_pos, puzzle.movement))
             print(f"{dir=}")
             show_puzzle_q2(
                 Puzzle(tiles_map, cur_pos, puzzle.movement), to_point=e.args[0]
