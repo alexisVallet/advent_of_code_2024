@@ -20,7 +20,7 @@ class Args:
 class Tile(Enum):
     BOX = 0
     WALL = 1
-    Robot = 2
+    ROBOT = 2
 
 
 Vec = npt.NDArray[np.float64]
@@ -40,7 +40,7 @@ def parse_tile(c: str) -> Tile | None:
         case "O":
             return Tile.BOX
         case "@":
-            return Tile.Robot
+            return Tile.ROBOT
         case _:
             return None
 
@@ -75,8 +75,8 @@ def parse_puzzle(tiles_and_dirs: tuple[list[list[Tile | None]], list[Vec]]) -> P
         match tiles[i][j]:
             case None:
                 continue
-            case Tile.Robot:
-                tile = Tile.Robot
+            case Tile.ROBOT:
+                tile = Tile.ROBOT
                 robot_pos = tile_pos
             case _tile:
                 tile = _tile
@@ -210,7 +210,7 @@ def simulate_q2(puzzle: Puzzle, interactive: bool, step: bool) -> Puzzle:
                 to_add.append((tile, new_pos))
             for tile, new_pos in to_add:
                 tiles_map[tuple(new_pos)] = tile
-                if tile == Tile.Robot:
+                if tile == Tile.ROBOT:
                     cur_pos = new_pos
         except CantMove:
             pass
@@ -267,7 +267,7 @@ def show_puzzle_q2(puzzle: Puzzle, to_point: None | tuple[int, int] = None) -> N
                         chars: str = "[]"
                     case Tile.WALL:
                         chars = "##"
-                    case Tile.Robot:
+                    case Tile.ROBOT:
                         chars = "@"
             to_print[i][j_int : j_int + len(chars)] = list(chars)
     for line in to_print:
