@@ -202,9 +202,6 @@ def main() -> None:
     program: Program = ProgramParser.program.parse(input_text).unwrap()
 
     print(f"Question 1 answer: {','.join(str(out) for out, _ in interpret(program))}")
-    # quine_value = search_quine(program)
-    # print(f"Question 2 answer: {quine_value}")
-    # print(f"{list(o for o, _ in interpret(Program(registers=(quine_value, 0, 0), instructions=program.instructions)))}")
     test_input_out = search_gpu(
         torch.device("cuda:0"), test_input_program, [0, 3, 5, 4, 3, 0], start_from=0
     )
