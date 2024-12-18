@@ -1,0 +1,12 @@
+[project]
+name = "aoc-day17"
+version = "0.0.1"
+dependencies = [
+    "numpy == 2.2.0",
+    "simple-parsing == 0.1.6",
+    "black == 24.10.0",
+    "parsita == 2.2.1",
+    "networkx == 3.4.2",
+    "tqdm == 4.67.1",
+    "torch == 2.5.1"
+]
