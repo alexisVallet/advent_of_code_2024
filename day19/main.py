@@ -65,12 +65,9 @@ def main() -> None:
                 total_num_solutions += num_solutions(remaining_design[len(towel) :])
         return total_num_solutions
 
-    n: int = 0
-
-    for design in input.designs:
-        n += num_solutions(design)
-
-    print(f"Question 2 answer: {n}")
+    print(
+        f"Question 2 answer: {sum(num_solutions(design) for design in input.designs)}"
+    )
 
 
 if __name__ == "__main__":
